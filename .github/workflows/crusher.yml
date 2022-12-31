@@ -1,0 +1,22 @@
+name: Running tests for Next.js
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "npm"
+      - name: Install node modules
+        run: npm i
+
+      - name: Build app
+        run: npm run build
+
+      - name: Run tests
+        run: npx crusher.dev test:run --pre-run="npm run start" --token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNDg5IiwidGVhbV9pZCI6NDE0LCJpYXQiOjE2NzI1MjQ4NzgsImV4cCI6MTcwNDA2MDg3OH0.JSCl8sZQmEUTFtreuB2yWSNCvQiKo_C_R5XkGZoy6eQ"
