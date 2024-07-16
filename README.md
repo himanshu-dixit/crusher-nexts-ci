@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Starteddsds
 
-First, run the development server:d
+First, run the development server:dsdds
 
 ```bash
 npm run dev
